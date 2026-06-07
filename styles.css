@@ -1,0 +1,57 @@
+/* style.css - additional custom styling for refinement */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Smooth hover transitions for cards */
+.bg-white.rounded-xl {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bg-white.rounded-xl:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom underline for section headers */
+.border-l-4 {
+  transition: border-color 0.2s;
+}
+
+/* Better list styling for experience section */
+.list-disc li {
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive image container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer link styling */
+footer a:hover {
+  text-decoration: underline;
+  color: #f0f9ff;
+}
+
+/* Ensure competencies grid is evenly spaced */
+@media (max-width: 640px) {
+  .gap-3 {
+    gap: 0.75rem;
+  }
+}
+
+/* Print-friendly adjustments (optional) */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .shadow-soft, .shadow-xl {
+    box-shadow: none;
+  }
+  .bg-gradient-to-r {
+    background: #f3f4f6;
+  }
+}
