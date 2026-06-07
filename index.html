@@ -20,10 +20,31 @@
     }
   </script>
 </head>
-<body class="bg-gray-50 text-gray-800 scroll-smooth">
+<body class="bg-gray-50 text-gray-800 scroll-smooth pt-16">
+
+  <!-- NAVBAR (fixed top) -->
+  <nav class="fixed top-0 left-0 w-full bg-indigo-700 text-white shadow-lg z-50">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+      <!-- Left: user name -->
+      <a href="#home" class="text-xl font-bold tracking-tight hover:text-indigo-200 transition-colors duration-200">
+        <span class="hidden sm:inline">Gafar Abiodun Adeogun</span>
+        <span class="sm:hidden">Gafar Adeogun</span>
+      </a>
+      <!-- Right: page content links -->
+      <div class="flex space-x-4 md:space-x-6 text-sm md:text-base font-medium">
+        <a href="#home" class="nav-link hover:text-indigo-200 transition-colors duration-200">Home</a>
+        <a href="#profile" class="nav-link hover:text-indigo-200 transition-colors duration-200">Profile</a>
+        <a href="#competencies" class="nav-link hover:text-indigo-200 transition-colors duration-200">Competencies</a>
+        <a href="#experience" class="nav-link hover:text-indigo-200 transition-colors duration-200">Experience</a>
+        <a href="#education" class="nav-link hover:text-indigo-200 transition-colors duration-200">Education</a>
+        <a href="#tech" class="nav-link hover:text-indigo-200 transition-colors duration-200">Tech</a>
+        <a href="#value" class="nav-link hover:text-indigo-200 transition-colors duration-200">Value Prop</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- HERO SECTION (image + summary side-by-side) -->
-  <section class="bg-white border-b border-gray-100 shadow-sm">
+  <section id="home" class="bg-white border-b border-gray-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-16">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <!-- Left side: summary text block -->
@@ -59,7 +80,7 @@
   </section>
 
   <!-- EXECUTIVE PROFILE (full text) -->
-  <section class="max-w-7xl mx-auto px-5 md:px-8 py-12">
+  <section id="profile" class="max-w-7xl mx-auto px-5 md:px-8 py-12">
     <div class="bg-white rounded-2xl shadow-soft p-6 md:p-8">
       <h2 class="text-2xl md:text-3xl font-bold text-gray-900 border-l-4 border-indigo-600 pl-4 mb-5">Executive Profile</h2>
       <p class="text-gray-700 leading-relaxed text-base md:text-lg">
@@ -71,7 +92,7 @@
   </section>
 
   <!-- CORE EXECUTIVE COMPETENCIES (full list) -->
-  <section class="max-w-7xl mx-auto px-5 md:px-8 py-8">
+  <section id="competencies" class="max-w-7xl mx-auto px-5 md:px-8 py-8">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 border-l-4 border-indigo-600 pl-4 mb-7">Core Executive Competencies</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div class="flex items-start gap-2"><i class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Financial Strategy & Leadership</span></div>
@@ -101,7 +122,7 @@
   </section>
 
   <!-- PROFESSIONAL EXPERIENCE (all roles with full details) -->
-  <section class="max-w-7xl mx-auto px-5 md:px-8 py-8">
+  <section id="experience" class="max-w-7xl mx-auto px-5 md:px-8 py-8">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 border-l-4 border-indigo-600 pl-4 mb-7">Professional Experience</h2>
     <div class="space-y-8">
       <!-- PHALSA INVESTMENT LIMITED -->
@@ -230,7 +251,7 @@
   </section>
 
   <!-- EDUCATION + CERTIFICATIONS -->
-  <section class="max-w-7xl mx-auto px-5 md:px-8 py-8">
+  <section id="education" class="max-w-7xl mx-auto px-5 md:px-8 py-8">
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-white rounded-xl shadow-soft p-6">
         <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4"><i class="fas fa-graduation-cap text-indigo-600"></i> Education</h3>
@@ -252,7 +273,7 @@
   </section>
 
   <!-- TECHNOLOGY & SYSTEMS + PROFESSIONAL MEMBERSHIPS -->
-  <section class="max-w-7xl mx-auto px-5 md:px-8 py-6">
+  <section id="tech" class="max-w-7xl mx-auto px-5 md:px-8 py-6">
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-white rounded-xl shadow-soft p-6">
         <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4"><i class="fas fa-microchip text-indigo-600"></i> Technology & Systems</h3>
@@ -272,7 +293,7 @@
   </section>
 
   <!-- EXECUTIVE VALUE PROPOSITION -->
-  <section class="max-w-7xl mx-auto px-5 md:px-8 py-8">
+  <section id="value" class="max-w-7xl mx-auto px-5 md:px-8 py-8">
     <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-6 md:p-8 border-l-8 border-indigo-500">
       <h3 class="text-2xl font-bold text-gray-800 mb-3">Executive Value Proposition</h3>
       <p class="text-gray-700 leading-relaxed text-base md:text-lg">

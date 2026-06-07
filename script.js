@@ -1,4 +1,4 @@
-// script.js - Dynamic footer year and smooth scroll enhancements
+// script.js - Dynamic footer year, back-to-top button, and active nav highlighting
 
 // Set current year in footer
 document.addEventListener('DOMContentLoaded', function() {
@@ -27,6 +27,29 @@ document.addEventListener('DOMContentLoaded', function() {
   backToTopBtn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // Active nav link detection (Intersection Observer)
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  const observerOptions = {
+    rootMargin: '-80px 0px -50% 0px'  // compensate for fixed navbar
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
 
   // Add simple console greeting (no impact on user)
   console.log('Portfolio website for Gafar Abiodun Adeogun, FCA — loaded with complete executive data.');

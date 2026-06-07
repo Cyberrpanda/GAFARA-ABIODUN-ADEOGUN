@@ -55,3 +55,8 @@ footer a:hover {
     background: #f3f4f6;
   }
 }
+
+/* Active nav link style (indigo-200) */
+.nav-link.active {
+  color: #c7d2fe !important; /* Tailwind indigo-200 */
+}
