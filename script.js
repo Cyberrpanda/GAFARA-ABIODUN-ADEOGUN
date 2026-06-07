@@ -1,4 +1,4 @@
-// script.js - Dynamic footer year, back-to-top button, and active nav highlighting
+// script.js - Dynamic footer year, back-to-top button, active nav highlighting, and scroll reveal animations
 
 // Set current year in footer
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // Optional: Add a "Back to Top" button if needed (graceful enhancement)
+  // Back to Top button
   const backToTopBtn = document.createElement('button');
   backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
   backToTopBtn.className = 'fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-200 z-50 opacity-0 invisible';
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Active nav link detection (Intersection Observer)
+  // Active nav link detection (Intersection Observer for sections)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
   
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     rootMargin: '-80px 0px -50% 0px'  // compensate for fixed navbar
   };
 
-  const observer = new IntersectionObserver((entries) => {
+  const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => {
@@ -49,7 +49,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, observerOptions);
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach(section => navObserver.observe(section));
+
+  // Scroll-triggered reveal animations for elements with .reveal class
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Optional: once revealed, stop observing
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
 
   // Add simple console greeting (no impact on user)
   console.log('Portfolio website for Gafar Abiodun Adeogun, FCA — loaded with complete executive data.');
